@@ -1045,7 +1045,7 @@ mark.search-hit{background:#f6d785;color:#0d1d33;border-radius:2px;padding:0 .05
     const card=toggle.closest('.program');
     if(!card)return;
     // Diğer programı otomatik kapatarak sayfayı kısa tut.
-    $('.program.expanded').forEach(other=>{
+    $$('.program.expanded').forEach(other=>{
       if(other===card)return;
       other.classList.remove('expanded');
       const otherToggle=$('.program-toggle',other);
