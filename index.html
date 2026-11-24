@@ -920,6 +920,11 @@ mark.search-hit{background:#f6d785;color:#0d1d33;border-radius:2px;padding:0 .05
 @media(max-width:900px){#tam-sayilar .int-main{grid-template-columns:1fr}#tam-sayilar .int-sim{border-right:0;border-bottom:1px solid #ded6c8}#tam-sayilar .int-head{display:block}#tam-sayilar .int-back{display:inline-block;margin-top:14px}}
 @media(max-width:530px){#tam-sayilar .int-stage{height:260px}#tam-sayilar .int-beam{top:120px}#tam-sayilar .int-pivot{height:99px;bottom:44px}#tam-sayilar .int-side-label{top:164px;font-size:.65rem}#tam-sayilar .int-tile{width:23px;height:23px;font-size:.9rem}#tam-sayilar .int-readout{grid-template-columns:1fr}#tam-sayilar .int-readout>div+div{border-left:0;border-top:1px solid #e6dfd2}#tam-sayilar .int-bar button{padding:10px 8px;font-size:.67rem}#tam-sayilar .int-pile output{font-size:1.8rem}}
 @media(prefers-reduced-motion:reduce){#tam-sayilar .int-beam,#tam-sayilar .int-marker{transition:none}#tam-sayilar .int-tile{animation:none}}
+
+/* Tam sayı taşları için sürükle-bırak geri bildirimi */
+#tam-sayilar [data-int-add]{cursor:grab}
+#tam-sayilar [data-int-add]:active{cursor:grabbing}
+#tam-sayilar .int-stage.int-drag-target{outline:3px dashed #be9a56;outline-offset:-6px;background-color:#fff8e8}
 </style><script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"ECE VIP Matematik Akademi","description":"Kızıltepe'de LGS, TYT, AYT, KPSS ve AGS hazırlığı için matematik ve Türkçe dersleri, çalışma salonu, konu anlatım ve test çözme kampları.","telephone":"+90 543 815 30 55","address":{"@type":"PostalAddress","streetAddress":"Kızıltepe Otogar girişi, Esnaf ve Sanatkârlar Odası yanı, Halkbank arkası","addressLocality":"Kızıltepe","addressRegion":"Mardin","addressCountry":"TR"},"areaServed":{"@type":"Place","name":"Kızıltepe, Mardin"},"sameAs":["https://www.instagram.com/ece_vip_matematik/"]}</script><!-- Cloudflare Web Analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"1f23ba2cf1f74243ba52b8e55b016862"}'></script>
 <!-- End Cloudflare Web Analytics -->
@@ -1050,7 +1055,7 @@ mark.search-hit{background:#f6d785;color:#0d1d33;border-radius:2px;padding:0 .05
     </div>
     <div class="int-axis"><small>SONUÇ · SAYI DOĞRUSUNDA</small><div class="int-track"><span class="int-marker" id="intMarker"></span></div><div class="int-labels"><span>−12</span><span>−6</span><span>0</span><span>+6</span><span>+12</span></div></div>
    </div>
-   <aside class="int-controls"><h3>Taşları yerleştirin</h3><p>Her taşın değeri 1'dir. Taş ekleyerek veya çıkararak dengeyi değiştirin.</p>
+   <aside class="int-controls"><h3>Taşları yerleştirin</h3><p>Taş ekleyip çıkarın. Bilgisayarda taşları tahtanın doğru tarafına sürükleyin; telefonda düğmeleri kullanın.</p>
     <div class="int-piles"><div class="int-pile minus"><small>NEGATİF TAŞLAR</small><output id="intNegCount">−3</output><button class="add" type="button" data-int-add="-1">−1 ekle ＋</button><button type="button" data-int-remove="neg">Bir −1 çıkar</button></div><div class="int-pile plus"><small>POZİTİF TAŞLAR</small><output id="intPosCount">+3</output><button class="add" type="button" data-int-add="1">+1 ekle ＋</button><button type="button" data-int-remove="pos">Bir +1 çıkar</button></div></div>
     <div class="int-actions"><button id="intHint" type="button">İpucu ↗</button><button id="intReset" type="button">Sıfırla ↺</button></div>
     <div id="intMission" class="int-mission" hidden><small id="intMissionNo">GÖREV 1 / 4</small><h4 id="intMissionName">Dengeyi kur.</h4><p id="intMissionText">Toplamı sıfıra getir.</p><button type="button" id="intCheck">Cevabı kontrol et ✓</button> <button type="button" id="intNext" disabled>Sonraki görev →</button><span class="int-feedback" id="intFeedback" role="status" aria-live="polite"></span></div>
@@ -1947,7 +1952,39 @@ $$('img[data-photo-key]').forEach(img=>{
   $('intMission').hidden=m==='free';
   if(m==='free'){p=3;n=3;render()}else{task=0;loadTask()}
  }
- root.querySelectorAll('[data-int-add]').forEach(b=>b.addEventListener('click',()=>change(Number(b.dataset.intAdd))));
+ let draggedSign=0;
+ root.querySelectorAll('[data-int-add]').forEach(b=>{
+  b.setAttribute('draggable','true');
+  b.addEventListener('click',()=>change(Number(b.dataset.intAdd)));
+  b.addEventListener('dragstart',event=>{
+   draggedSign=Number(b.dataset.intAdd);
+   if(event.dataTransfer){
+    event.dataTransfer.setData('text/plain',String(draggedSign));
+    event.dataTransfer.effectAllowed='copy';
+   }
+  });
+  b.addEventListener('dragend',()=>{draggedSign=0;});
+ });
+ const dropArea=$('intStage');
+ dropArea.addEventListener('dragover',event=>{
+  event.preventDefault();
+  if(event.dataTransfer)event.dataTransfer.dropEffect='copy';
+  dropArea.classList.add('int-drag-target');
+ });
+ dropArea.addEventListener('dragleave',event=>{
+  if(!dropArea.contains(event.relatedTarget))dropArea.classList.remove('int-drag-target');
+ });
+ dropArea.addEventListener('drop',event=>{
+  event.preventDefault();dropArea.classList.remove('int-drag-target');
+  const sign=Number(event.dataTransfer?.getData('text/plain')||draggedSign);
+  if(sign!==1&&sign!==-1)return;
+  const rect=dropArea.getBoundingClientRect();
+  if(!rect.width)return;
+  const x=(event.clientX-rect.left)/rect.width;
+  if((sign===-1&&x<.5)||(sign===1&&x>=.5))change(sign);
+  else $('intFeedback').textContent='−1 taşını sola, +1 taşını sağa bırakın.';
+  draggedSign=0;
+ });
  root.querySelectorAll('[data-int-remove]').forEach(b=>b.addEventListener('click',()=>{
   if(b.dataset.intRemove==='neg'&&n>0)n--;
   if(b.dataset.intRemove==='pos'&&p>0)p--;
