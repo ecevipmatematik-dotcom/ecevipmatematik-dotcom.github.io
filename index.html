@@ -630,6 +630,46 @@ mark.search-hit{background:#f6d785;color:#0d1d33;border-radius:2px;padding:0 .05
 @media(max-width:470px){.lib-grid{grid-template-columns:1fr}.lib-cover{min-height:195px}.lib-tabs{gap:5px}.lib-tab{padding:9px 11px}.lib-dialog-head{padding:8px}.lib-dialog-head strong{font-size:.75rem}.lib-dialog-head a{font-size:.7rem}}
 @media(prefers-reduced-motion:reduce){.lib-card,.lib-tab{transition:none}}
 
+
+/* Compact class folders */
+#pdf-kutuphanesi .lib-tools{display:block;padding:14px 0;border-bottom:0}
+#pdf-kutuphanesi .lib-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+#pdf-kutuphanesi .lib-folder{display:flex;align-items:center;text-align:left;gap:12px;min-width:0;padding:13px 14px;min-height:68px;border:1px solid #c8a25255;border-radius:10px;background:#ffffff06;color:#e7c57d}
+#pdf-kutuphanesi .lib-folder:hover,#pdf-kutuphanesi .lib-folder.active{background:#e7c57d15;border-color:#e7c57d;transform:none}
+#pdf-kutuphanesi .lib-folder svg{flex-shrink:0;width:32px;height:28px}
+#pdf-kutuphanesi .lib-folder strong{display:block;color:#f7f5f0;font-size:.91rem;line-height:1.25}
+#pdf-kutuphanesi .lib-folder small{display:block;color:#b9c8d7;font-size:.7rem;margin-top:4px}
+#pdf-kutuphanesi .lib-arrow{margin-left:auto;transition:transform .2s;font-size:1.1rem;color:#e7c57d}
+#pdf-kutuphanesi [aria-expanded=true] .lib-arrow{transform:rotate(180deg)}
+#pdf-kutuphanesi .lib-search-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px}
+#pdf-kutuphanesi .lib-search{flex:1 1 220px;max-width:none}
+#pdf-kutuphanesi .lib-search input{border-radius:8px;min-height:43px}
+#pdf-kutuphanesi .lib-all{display:flex;align-items:center;gap:10px;border-radius:8px;min-height:43px;border-color:#c8a25288;color:#f7f5f0}
+#pdf-kutuphanesi .lib-all.active{color:#f7f5f0;background:#e7c57d15;transform:none}
+#pdf-kutuphanesi .lib-results[hidden],#pdf-kutuphanesi .lib-card[hidden],#pdf-kutuphanesi .lib-empty[hidden]{display:none!important}
+#pdf-kutuphanesi .lib-results{margin-top:8px;padding-top:12px;border-top:1px solid #ffffff28;animation:lib-reveal .25s ease both}
+#pdf-kutuphanesi .lib-results-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+#pdf-kutuphanesi .lib-count{margin:0}
+#pdf-kutuphanesi .lib-collapse{font:inherit;font-size:.78rem;background:transparent;color:#e7c57d;border:1px solid #c8a25288;border-radius:6px;padding:6px 12px;cursor:pointer}
+#pdf-kutuphanesi .lib-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#pdf-kutuphanesi .lib-card{flex-direction:row;align-items:center;min-width:0;border-radius:9px;box-shadow:none;border-color:#ffffff20;background:#ffffff08;color:#fff;padding:12px;gap:12px}
+#pdf-kutuphanesi .lib-card:hover{transform:none;box-shadow:none;border-color:#c8a25288}
+#pdf-kutuphanesi .lib-mini-cover{display:grid;place-items:center;flex-shrink:0;width:46px;height:52px;color:#e7c57d;background:#c8a25215;border:1px solid #c8a25244;border-radius:5px;font:700 1.1rem Georgia,serif}
+#pdf-kutuphanesi .lib-details{min-width:0;padding:0;gap:3px}
+#pdf-kutuphanesi .lib-kind{color:#e7c57d;font-size:.66rem}
+#pdf-kutuphanesi .lib-details h3{font-size:.88rem;color:#f7f5f0;overflow-wrap:anywhere}
+#pdf-kutuphanesi .lib-details p{color:#b9c8d7;font-size:.7rem}
+#pdf-kutuphanesi .lib-actions{padding-top:4px;gap:6px}
+#pdf-kutuphanesi .lib-preview,#pdf-kutuphanesi .lib-download{padding:6px 10px;border-radius:5px;font-size:.7rem;color:#f7f5f0;border-color:#c8a25288;background:transparent;min-height:32px}
+#pdf-kutuphanesi .lib-download{background:#e7c57d;color:#10263d}
+#pdf-kutuphanesi .lib-preview:hover,#pdf-kutuphanesi .lib-download:hover{background:#f2d59a;color:#10263d}
+#pdf-kutuphanesi .lib-note{margin-top:8px}
+#pdf-kutuphanesi .lib-collapse:focus-visible{outline:3px solid #e7c57d;outline-offset:3px}
+@keyframes lib-reveal{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+@media(max-width:720px){#pdf-kutuphanesi .lib-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}#pdf-kutuphanesi .lib-grid{grid-template-columns:1fr}}
+@media(max-width:420px){#pdf-kutuphanesi .lib-folder{padding:10px;gap:7px}#pdf-kutuphanesi .lib-folder svg{width:25px}#pdf-kutuphanesi .lib-folder strong{font-size:.8rem}#pdf-kutuphanesi .lib-folder small{font-size:.65rem}#pdf-kutuphanesi .lib-all{flex:1;justify-content:center}}
+@media(prefers-reduced-motion:reduce){#pdf-kutuphanesi .lib-results{animation:none}#pdf-kutuphanesi .lib-arrow{transition:none}}
+
 /* Sabit WhatsApp iletişim butonu: tüm sayfalarda görünür */
 @media (min-width:761px){
   .footer-contact{
@@ -882,21 +922,16 @@ mark.search-hit{background:#f6d785;color:#0d1d33;border-radius:2px;padding:0 .05
    <div><div class="lib-eyebrow">ECE VIP AKADEMİ · DİJİTAL KAYNAKLAR</div><h2 id="libTitle">Kamp <em>PDF Kütüphanesi.</em></h2><p>Kamp fasiküllerini ve matematik çalışma kaynaklarını sınıfınıza göre bulun. PDF dosyalarını çevrim içi inceleyebilir veya cihazınıza indirebilirsiniz.</p></div>
    <div class="lib-number"><strong>36</strong><small>Kamp ve çalışma kaynağı</small></div>
   </div>
-  <div class="lib-tools">
-   <div class="lib-tabs" role="group" aria-label="PDF sınıf filtresi">
-    <button class="lib-tab active" type="button" data-lib-filter="all" aria-pressed="true">Tümü</button>
-    <button class="lib-tab" type="button" data-lib-filter="6" aria-pressed="false">6. Sınıf</button>
-    <button class="lib-tab" type="button" data-lib-filter="7" aria-pressed="false">7. Sınıf</button>
-    <button class="lib-tab" type="button" data-lib-filter="8" aria-pressed="false">8. Sınıf / LGS</button>
-    <button class="lib-tab" type="button" data-lib-filter="9" aria-pressed="false">9. Sınıf</button><button class="lib-tab" type="button" data-lib-filter="10" aria-pressed="false">10. Sınıf</button>
-    <button class="lib-tab" type="button" data-lib-filter="tyt" aria-pressed="false">TYT</button>
-   </div>
-   <label class="lib-search"><span class="sr-only">Kamp PDF'lerinde ara</span><input id="libSearch" type="search" placeholder="Sınıf, kamp günü veya kaynak ara..." autocomplete="off" aria-label="Kamp PDF'lerinde ara"></label>
-  </div>
-  <p class="lib-count" id="libCount" role="status" aria-live="polite">36 kaynak gösteriliyor</p>
-  <div class="lib-grid" id="libGrid"></div>
-  <p class="lib-empty" id="libEmpty" hidden>Aramanıza uygun fasikül bulunamadı. Başka bir sınıf veya kamp günü seçin.</p>
-  <p class="lib-note">Bu kütüphane şu anda GitHub'a yüklenmiş PDF dosyalarını gösterir. Henüz yüklenmemiş kamp günleri listelenmez. Dosya önizlemesi cihazınızın PDF görüntüleme desteğine bağlıdır.</p>
+  <div class="lib-tools"><div class="lib-tabs" role="group" aria-label="Sınıf klasörleri">
+<button class="lib-tab lib-folder" type="button" data-lib-filter="6" aria-expanded="false" aria-controls="libResults"><svg viewBox="0 0 40 32" width="40" height="32" fill="none" aria-hidden="true"><path d="M2 8V5a3 3 0 0 1 3-3h11l5 5h14a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8Z" fill="#c8a25222" stroke="currentColor" stroke-width="1.5"/><path d="M2 12h36" stroke="currentColor" stroke-width="1.5"/></svg><span><strong>6. Sınıf</strong><small>5 PDF kaynak</small></span><span class="lib-arrow" aria-hidden="true">⌄</span></button>
+<button class="lib-tab lib-folder" type="button" data-lib-filter="7" aria-expanded="false" aria-controls="libResults"><svg viewBox="0 0 40 32" width="40" height="32" fill="none" aria-hidden="true"><path d="M2 8V5a3 3 0 0 1 3-3h11l5 5h14a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8Z" fill="#c8a25222" stroke="currentColor" stroke-width="1.5"/><path d="M2 12h36" stroke="currentColor" stroke-width="1.5"/></svg><span><strong>7. Sınıf</strong><small>9 PDF kaynak</small></span><span class="lib-arrow" aria-hidden="true">⌄</span></button>
+<button class="lib-tab lib-folder" type="button" data-lib-filter="8" aria-expanded="false" aria-controls="libResults"><svg viewBox="0 0 40 32" width="40" height="32" fill="none" aria-hidden="true"><path d="M2 8V5a3 3 0 0 1 3-3h11l5 5h14a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8Z" fill="#c8a25222" stroke="currentColor" stroke-width="1.5"/><path d="M2 12h36" stroke="currentColor" stroke-width="1.5"/></svg><span><strong>8. Sınıf / LGS</strong><small>4 PDF kaynak</small></span><span class="lib-arrow" aria-hidden="true">⌄</span></button>
+<button class="lib-tab lib-folder" type="button" data-lib-filter="9" aria-expanded="false" aria-controls="libResults"><svg viewBox="0 0 40 32" width="40" height="32" fill="none" aria-hidden="true"><path d="M2 8V5a3 3 0 0 1 3-3h11l5 5h14a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8Z" fill="#c8a25222" stroke="currentColor" stroke-width="1.5"/><path d="M2 12h36" stroke="currentColor" stroke-width="1.5"/></svg><span><strong>9. Sınıf</strong><small>7 PDF kaynak</small></span><span class="lib-arrow" aria-hidden="true">⌄</span></button>
+<button class="lib-tab lib-folder" type="button" data-lib-filter="10" aria-expanded="false" aria-controls="libResults"><svg viewBox="0 0 40 32" width="40" height="32" fill="none" aria-hidden="true"><path d="M2 8V5a3 3 0 0 1 3-3h11l5 5h14a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8Z" fill="#c8a25222" stroke="currentColor" stroke-width="1.5"/><path d="M2 12h36" stroke="currentColor" stroke-width="1.5"/></svg><span><strong>10. Sınıf</strong><small>1 PDF kaynak</small></span><span class="lib-arrow" aria-hidden="true">⌄</span></button>
+<button class="lib-tab lib-folder" type="button" data-lib-filter="tyt" aria-expanded="false" aria-controls="libResults"><svg viewBox="0 0 40 32" width="40" height="32" fill="none" aria-hidden="true"><path d="M2 8V5a3 3 0 0 1 3-3h11l5 5h14a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8Z" fill="#c8a25222" stroke="currentColor" stroke-width="1.5"/><path d="M2 12h36" stroke="currentColor" stroke-width="1.5"/></svg><span><strong>TYT</strong><small>10 PDF kaynak</small></span><span class="lib-arrow" aria-hidden="true">⌄</span></button>
+</div><div class="lib-search-row"><label class="lib-search"><span class="sr-only">Kamp PDF'lerinde ara</span><input id="libSearch" type="search" placeholder="Kütüphanede kaynak ara..." autocomplete="off" aria-label="Kamp PDF'lerinde ara"></label><button class="lib-tab lib-all" type="button" data-lib-filter="all" aria-expanded="false" aria-controls="libResults">Tüm 36 PDF'yi aç <span class="lib-arrow" aria-hidden="true">⌄</span></button></div></div>
+<div id="libResults" class="lib-results" hidden><div class="lib-results-head"><p class="lib-count" id="libCount" role="status" aria-live="polite"></p><button type="button" class="lib-collapse" id="libCollapse">Kapat ↑</button></div><div class="lib-grid" id="libGrid"></div><p class="lib-empty" id="libEmpty" hidden>Aramanıza uygun fasikül bulunamadı. Başka bir sınıf veya kamp günü seçin.</p></div>
+<p class="lib-note">Sınıf klasörünü seçerek PDF'leri açın veya arama yapın. Dosyaları önizleyebilir ve indirebilirsiniz.</p>
  </div>
 </section>
 <dialog class="lib-dialog" id="libDialog" aria-label="Kamp PDF önizlemesi">
@@ -1542,18 +1577,17 @@ $$('img[data-photo-key]').forEach(img=>{
   return el;
  };
  const href=name=>'pdfler/'+name.split('/').map(encodeURIComponent).join('/');
- let filter='all';
+ let filter=null;
+ const results=document.getElementById('libResults');
+ const collapse=document.getElementById('libCollapse');
  function buildCard(f){
   const card=make('article','lib-card');
   card.dataset.category=f.category;
   card.dataset.search=norm([f.title,f.kind,label[f.category],f.name].join(' '));
-  const cover=make('div','lib-cover');
-  cover.append(make('div','lib-cover-top','ECE VIP · '+(label[f.category]||'KAMP')));
-  const main=make('div','lib-cover-main');
-  main.append(make('span','lib-cover-day',f.day===null?'PDF':String(f.day).padStart(2,'0')),make('strong','lib-cover-title',f.day===null?'ÇALIŞMA KAYNAĞI':'KAMP GÜNÜ'));
-  cover.append(main,make('span','lib-cover-foot',f.kind.toLocaleUpperCase('tr-TR')));
+  const cover=make('div','lib-mini-cover',f.day===null?'PDF':String(f.day).padStart(2,'0'));
+  cover.setAttribute('aria-hidden','true');
   const body=make('div','lib-details');
-  body.append(make('span','lib-kind',f.kind),make('h3','',f.title),make('p','PDF fasikülü · '+f.size));
+  body.append(make('span','lib-kind',label[f.category]+' · '+f.kind),make('h3','',f.title),make('p','PDF · '+f.size));
   const acts=make('div','lib-actions');
   const preview=make('button','lib-preview','Önizle ↗');
   preview.type='button';preview.dataset.pdf=f.path||f.name;preview.dataset.title=(label[f.category]||'KAMP')+' — '+f.title;
@@ -1566,20 +1600,25 @@ $$('img[data-photo-key]').forEach(img=>{
  const fragment=document.createDocumentFragment();files.forEach(f=>fragment.append(buildCard(f)));grid.append(fragment);
  const cards=Array.from(grid.children);
  function update(){
-  const needle=norm(search.value);let visible=0;
+  const needle=norm(search.value);const isOpen=filter!==null||needle!=='';
+  results.hidden=!isOpen;
+  let visible=0;
   for(const card of cards){
-   const ok=(filter==='all'||card.dataset.category===filter)&&(!needle||card.dataset.search.includes(needle));
+   const ok=isOpen&&(filter===null||filter==='all'||card.dataset.category===filter)&&(!needle||card.dataset.search.includes(needle));
    card.hidden=!ok;if(ok)visible++;
   }
-  count.textContent=visible+' / '+cards.length+' kaynak gösteriliyor';
+  for(const tab of tabs){const active=filter===tab.dataset.libFilter;tab.classList.toggle('active',active);tab.setAttribute('aria-expanded',String(active));}
+  count.textContent=(filter&&filter!=='all'?(label[filter]+' · '):'')+visible+' / '+cards.length+' kaynak gösteriliyor';
   empty.hidden=visible!==0;
  }
  tabs.forEach(tab=>tab.addEventListener('click',()=>{
-  filter=tab.dataset.libFilter;
-  for(const t of tabs){const active=t===tab;t.classList.toggle('active',active);t.setAttribute('aria-pressed',String(active));}
+  const next=tab.dataset.libFilter;
+  filter=filter===next?null:next;
+  search.value='';
   update();
  }));
- search.addEventListener('input',update);
+ search.addEventListener('input',()=>{filter=null;update();});
+ collapse.addEventListener('click',()=>{const prev=tabs.find(t=>t.dataset.libFilter===filter);filter=null;search.value='';update();(prev||search).focus();});
  let origin=null;
  grid.addEventListener('click',e=>{
   const button=e.target.closest('button[data-pdf]');if(!button)return;
