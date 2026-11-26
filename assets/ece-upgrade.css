@@ -3,7 +3,7 @@
 :root{--serif:'Fraunces',Georgia,serif;--sans:'Plus Jakarta Sans',system-ui,sans-serif;--heading:'Plus Jakarta Sans',system-ui,sans-serif;--ece-ease:cubic-bezier(.2,.75,.25,1);--ece-gold:#cda86c;--ece-dark:#0b1c2c;--ece-light:#fbfaf6;--ece-ink:#182d3b}
 html{scroll-padding-top:110px}
 .utility::before,.utility::after,.utility-item,.utility-phone,.utility-item::after,.utility-phone::after,.utility-dot,.hero::before,.hero::after,.hero-content::after,.hero-badge,.hero-badge::before,.hero-wow::before,.hero-ambient::before,.ambient-ring,.ambient-cross,.hero-wow .hero-stamp,.hero-wow .hero-title .hero-serif,.hero-wow .hero-eyebrow-line__rule::before,.hero-wow .hero-ambient::after,.hero-trustline-star,.hero-scroll-cue__line::after,.hero-scroll-cue>span:last-child,.eq-wave,.eq-dot,.eq-ripple,#konu-icerikleri .curriculum-card::before,#konu-icerikleri .curriculum-motion-ring,#konu-icerikleri .curriculum-motion-glyph{animation-iteration-count:1!important}
-.hero-wow .hero-photo img{animation:none!important}.utility-track,.hero-marquee-inner{animation:none!important;transform:none!important}.utility-clone{display:none!important}
+.hero-wow .hero-photo img{animation:none!important}.utility-track{animation:none!important;transform:none!important}.utility-clone{display:none!important}
 .reveal-item{transition-duration:420ms!important}
 .ece-jump,.ece-search-launch,.ece-close,.ece-option,.ece-mode,.ece-result,.ece-next{font:inherit;cursor:pointer;min-height:44px;touch-action:manipulation}
 .ece-jump{display:inline-flex;align-items:center;padding:12px 18px;border:1px solid #cda86c;color:#ecd7ae;text-decoration:none;font-weight:700;font-size:.85rem;transition:background 180ms,transform 180ms var(--ece-ease)}
