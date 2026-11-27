@@ -7,7 +7,7 @@
   let allowed=false,loaded=false,choice="";
   try{choice=localStorage.getItem(key)||"";}catch{}
   const events=new Set(["whatsapp_click","phone_click","appointment_cta","contact_form_start","contact_form_whatsapp","pdf_preview","pdf_download","library_open","quiz_start","quiz_complete","program_match","program_details","math_lab_open","share_link","section_view"]);
-  const places=new Set(["anasayfa","programlar","iletisim","pdf-kutuphanesi","kaynaklar","seviye-testi","matematik-lab","calisma-salonu","galeri","kamplar","sinav-takvimi","footer","mobile","other"]);
+  const places=new Set(["anasayfa","programlar","iletisim","pdf-kutuphanesi","kaynaklar","seviye-testi","matematik-lab","calisma-salonu","galeri","kamplar","sinav-takvimi","neden-ece","kayit-daveti","footer","mobile","other"]);
   const campaigns={utm_source:new Set(["instagram","whatsapp","google","ece_site"]),utm_medium:new Set(["social","referral","organic","qr"]),utm_campaign:new Set(["bio","kamp_pdf","deneme","paylasim","on_gorusme"]),utm_content:new Set(["bio","story","reels","post","qr","library"])};
   const page=new URL(location.origin+location.pathname);
   const incoming=new URLSearchParams(location.search);
@@ -76,7 +76,7 @@
     else if(u.origin===location.origin&&["#iletisim","#contactForm"].includes(u.hash))send("appointment_cta",loc);
   },true);
   let formStarted=false;
-  document.getElementById("contactForm")?.addEventListener("focusin",()=>{if(!formStarted){formStarted=true;send("contact_form_start","iletisim");}});
+  document.getElementById("contactForm")?.addEventListener("focusin",()=>{if(allowed&&!formStarted){formStarted=true;send("contact_form_start","iletisim");}});
   if("IntersectionObserver" in window){
     const observer=new IntersectionObserver(entries=>{
       for(const e of entries)if(e.isIntersecting&&allowed){send("section_view",e.target.id);observer.unobserve(e.target);}

@@ -1,0 +1,87 @@
+/* ECE VIP — welcome and enrollment. Existing marquee and shared components are untouched. */
+#anasayfa .ece-welcome-title{font-size:clamp(2.8rem,4.65vw,5.7rem);letter-spacing:-.055em;line-height:1.03;max-width:13ch}
+#anasayfa .ece-welcome-title .hero-lead{font-weight:650}
+#anasayfa .ece-welcome-title .hero-serif{font-size:1em;line-height:1.06;margin-top:.14em;display:block;letter-spacing:-.055em}
+#anasayfa .hero-description{line-height:1.7;margin:22px 0 25px}
+#anasayfa .hero-actions{align-items:stretch}
+#anasayfa .hero-actions .btn{gap:10px;white-space:normal;text-align:left;line-height:1.4}
+#anasayfa .ece-welcome-note{color:#bdcbd5;font-size:.77rem;line-height:1.55;margin-top:12px;max-width:450px}
+#anasayfa .hero-insights{margin-top:23px}
+#anasayfa .hero-actions .ece-jump{font-size:.72rem;min-height:40px;padding:9px 12px}
+.ece-enroll-cta{position:relative;overflow:hidden;isolation:isolate;min-height:52px}
+.ece-enroll-cta::after{content:"";position:absolute;inset:0 auto 0 -50%;width:35%;background:linear-gradient(90deg,transparent,#fff8,transparent);transform:skewX(-19deg);pointer-events:none}
+.ece-difference{background:#f4f1e9;color:#182d3b;padding:clamp(48px,6.4vw,92px) 0;border-bottom:1px solid #dfd8c9}
+.ece-diff-kicker{font:800 .72rem/1.5 var(--sans);letter-spacing:.16em;color:#805b2c;display:flex;align-items:center;gap:9px;margin-bottom:13px}
+.ece-diff-kicker>span{width:26px;height:1px;background:currentColor}
+.ece-difference-header{max-width:880px;margin-bottom:27px}
+.ece-difference h2,.ece-enroll-final h2{font-family:var(--serif);font-weight:650;letter-spacing:-.045em;line-height:1.05;font-size:clamp(2.15rem,4.4vw,4.1rem)}
+.ece-difference h2 em{color:#805b2c;font-weight:600}
+.ece-difference-header>p:last-child{max-width:720px;color:#50616b;font-size:.96rem;line-height:1.7;margin-top:17px}
+.ece-comparison{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:16px;align-items:stretch}
+.ece-class-main,.ece-class-story{border:1px solid #d9cfbb;background:#fbfaf6;border-radius:12px;padding:clamp(17px,2.5vw,30px);min-width:0}
+.ece-class-top{display:flex;justify-content:space-between;align-items:start;gap:12px;margin-bottom:19px}
+.ece-class-top h3,.ece-class-story h3{font-family:var(--serif);font-size:clamp(1.45rem,2.3vw,2.1rem);line-height:1.13;letter-spacing:-.025em}
+.ece-class-tag{flex:none;color:#52616c;border:1px solid #d9cfbb;padding:6px 8px;font-size:.58rem;font-weight:800;letter-spacing:.07em}
+.ece-class-switch{display:grid;grid-template-columns:1fr 1fr;gap:5px;background:#eee7d8;padding:5px;border-radius:8px;margin-bottom:13px}
+.ece-class-switch[hidden],.ece-classroom[hidden]{display:none!important}
+.ece-class-switch button{border:1px solid transparent;border-radius:5px;background:transparent;color:#243a49;font-size:.82rem;font-weight:800;padding:10px 8px;min-height:44px;transition:background .18s,color .18s}
+.ece-class-switch button[aria-pressed=true]{color:#fff;background:#142c3f;border-color:#142c3f}
+.ece-classrooms{display:grid;gap:12px}
+.ece-classroom{background:#f0ede5;border:1px solid #dcd4c3;border-radius:9px;padding:clamp(12px,2.2vw,22px);min-width:0}
+.ece-classroom-small{background:linear-gradient(145deg,#f8edd5,#faf7ed);border-color:#b68c4e}
+.ece-board{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#142c3f;color:#ecd7ae;border:3px solid #c3a26d;border-radius:4px;font-size:.78rem;font-weight:800;letter-spacing:.09em;padding:11px 13px;margin:0 auto 16px;max-width:350px}
+.ece-board span{font:italic .85rem var(--serif);letter-spacing:0}
+.ece-seats{display:grid;max-width:420px;margin:0 auto;gap:7px;height:clamp(172px,22vw,235px)}
+.ece-seats-30{grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:repeat(5,1fr)}
+.ece-seats-6{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,1fr);gap:clamp(12px,3vw,26px);max-width:340px}
+.ece-seat{border:1px solid #a7b0b5;border-radius:4px;background:#dce1e0;display:grid;place-items:center;min-width:0}
+.ece-person{position:relative;display:block;width:13px;height:12px;background:#596e7a;border-radius:5px 5px 2px 2px;margin-top:8px}
+.ece-person::before{content:"";position:absolute;left:50%;top:-10px;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:inherit}
+.ece-seats-6 .ece-seat{border-color:#b98b4b;background:#e9d4a9;box-shadow:inset 0 -4px 0 #cfab6c;border-radius:6px}
+.ece-seats-6 .ece-person{background:#91672e;width:24px;height:20px;margin-top:13px}
+.ece-seats-6 .ece-person::before{width:15px;height:15px;top:-17px}
+.ece-class-message{display:flex;flex-direction:column;gap:4px;text-align:center;margin-top:15px;line-height:1.5}
+.ece-class-message strong{font-size:clamp(.95rem,1.5vw,1.18rem);color:#182d3b}
+.ece-class-message span{font-size:.83rem;color:#4a5d66}
+.ece-class-disclaimer{font-size:.7rem;line-height:1.55;color:#53616a;margin-top:12px}
+.ece-class-story{background:#10263a;color:#fff;display:flex;flex-direction:column}
+.ece-class-story .ece-diff-kicker,.ece-diff-card .ece-diff-link,.ece-enroll-final .ece-diff-kicker{color:#ecd7ae}
+.ece-class-story figure{position:relative;margin:0 0 20px;aspect-ratio:16/10;border:1px solid #d1af76;overflow:hidden;border-radius:6px}
+.ece-class-story figure img{display:block;width:100%;height:100%;object-fit:cover}
+.ece-class-story figcaption{position:absolute;inset:auto 0 0;padding:22px 10px 8px;background:linear-gradient(transparent,#06111bdb);color:#fff;font-size:.72rem;font-weight:700}
+.ece-class-story h3 em{color:#e8c986;font-style:normal}
+.ece-class-story>p:not(.ece-diff-kicker){color:#cbd6df;font-size:.87rem;margin:12px 0 15px}
+.ece-diff-link{display:inline-flex;gap:8px;align-items:center;min-height:44px;font-weight:750;font-size:.78rem;color:#ecd7ae;text-decoration:underline;text-underline-offset:4px}
+.ece-class-story .ece-diff-link{margin-top:auto;align-self:start}
+.ece-diff-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}
+.ece-diff-card{position:relative;overflow:hidden;background:#10263a;color:#fff;border:1px solid #35495a;border-radius:9px;padding:clamp(16px,2vw,24px);min-width:0;display:flex;flex-direction:column;transition:transform .26s cubic-bezier(.2,.75,.25,1),border-color .26s}
+.ece-diff-card::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 0 0,#cda86c26,transparent 65%);opacity:0;transition:opacity .3s;pointer-events:none}
+.ece-diff-card-head{display:flex;align-items:center;justify-content:space-between;color:#e8c986;margin-bottom:18px}
+.ece-diff-card-head svg{width:29px;height:29px;transition:transform .25s}
+.ece-diff-card-head span{font-size:.7rem;font-weight:800;letter-spacing:.12em}
+.ece-diff-card h3{font:650 1.3rem/1.15 var(--serif);letter-spacing:-.015em;margin-bottom:9px}
+.ece-diff-card p{color:#cbd6df;font-size:.83rem;line-height:1.55;margin-bottom:12px}
+.ece-diff-card .ece-diff-link{margin-top:auto;align-self:start}
+.ece-diff-card:focus-within{border-color:#e8c986}
+.ece-difference-bottom{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:19px 21px;margin-top:16px;border:1px solid #d5c39e;border-radius:8px;background:#ece1cc}
+.ece-difference-bottom p{font-size:.9rem;line-height:1.5}
+.ece-difference-bottom .btn{flex:none}
+.ece-enroll-final{position:relative;background:#0b1c2c;color:#fff;padding:clamp(38px,6vw,85px) 0;border-top:1px solid #cda86c;overflow:hidden}
+.ece-enroll-inner{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,.75fr);gap:clamp(18px,4vw,60px);align-items:center}
+.ece-enroll-final h2{font-size:clamp(2.1rem,3.8vw,3.8rem)}
+.ece-enroll-final h2 em{color:#e8c986}
+.ece-enroll-final h2+p{color:#ced8de;margin-top:18px;font-size:.96rem}
+.ece-enroll-actions{display:grid;gap:10px}
+.ece-enroll-actions .btn{text-align:center;line-height:1.35}
+.ece-enroll-actions p{font-size:.72rem;color:#cbd6df}
+.ece-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.ece-difference :focus-visible,.ece-enroll-final :focus-visible{outline:3px solid #ad7e37;outline-offset:4px}
+@keyframes ece-welcome-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ece-welcome-shine{0%,35%{transform:translateX(0) skewX(-19deg);opacity:0}44%{opacity:.8}75%,100%{transform:translateX(480%) skewX(-19deg);opacity:0}}
+@keyframes ece-welcome-logo{from{box-shadow:0 0 20px #e8c986a6}to{box-shadow:0 0 0 transparent}}
+@media(prefers-reduced-motion:no-preference){#anasayfa .ece-welcome-title .hero-lead{animation:ece-welcome-rise 420ms cubic-bezier(.2,.75,.25,1) both!important}#anasayfa .ece-welcome-title .hero-serif{animation:ece-welcome-rise 500ms cubic-bezier(.2,.75,.25,1) 130ms both!important}#anasayfa .hero-actions .ece-enroll-cta::after{animation:ece-welcome-shine 4s ease-in-out 2 both}.nav .logo-symbol{animation:ece-welcome-logo 600ms ease-out both}.ece-classroom.ece-class-active{animation:ece-welcome-rise 360ms cubic-bezier(.2,.75,.25,1) both}}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){.ece-diff-card:hover{transform:translateY(-4px);border-color:#d0ac6c}.ece-diff-card:hover::before{opacity:1}.ece-diff-card:hover svg{transform:translateY(-3px) rotate(-5deg)}}
+@media(max-width:1000px){.ece-diff-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.ece-comparison{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}}
+@media(max-width:760px){#anasayfa .ece-welcome-title{font-size:clamp(2.6rem,8.9vw,4.5rem);max-width:14ch}#anasayfa .hero-description{margin:17px 0 20px}#anasayfa .hero-insights{margin-top:19px}.ece-comparison,.ece-enroll-inner{grid-template-columns:1fr}.ece-difference-bottom{align-items:stretch;flex-direction:column}.ece-class-top{flex-direction:column;gap:5px}.ece-seats{height:200px}.ece-difference h2 br{display:none}.ece-diff-cards{gap:8px}}
+@media(max-width:390px){#anasayfa .hero-actions .btn{width:100%;min-height:48px}.ece-diff-card h3{font-size:1.15rem}.ece-diff-card p{font-size:.78rem}.ece-diff-card{padding:13px}.ece-seats{height:180px}.ece-class-switch button{font-size:.75rem}}
+@media(prefers-reduced-motion:reduce){.ece-classroom,.ece-diff-card,.ece-diff-card-head svg,.ece-enroll-cta::after{animation:none!important;transition:none!important;transform:none!important}}
