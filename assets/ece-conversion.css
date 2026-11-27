@@ -1,0 +1,16 @@
+/* Registration and sharing controls; no changes to existing hero animation. */
+.ece-hero-note{margin:.65rem 0 0;color:inherit;opacity:.9;font-size:.9rem;line-height:1.55}
+#contactForm{scroll-margin-top:110px}
+.ece-library-actions{display:flex;align-items:center;flex-wrap:wrap;gap:.75rem;margin-top:1rem}
+.ece-share-btn,.ece-consent-actions button,.ece-consent-settings{font:inherit;cursor:pointer;border:1px solid #c8a252;border-radius:8px;padding:.75rem 1rem;background:#fff;color:#132a47;font-weight:700}
+.ece-library-actions #eceShareStatus{flex-basis:100%;font-size:.85rem;overflow-wrap:anywhere}
+.ece-library-actions #eceShareStatus:empty{display:none}
+.ece-consent[hidden],.ece-consent-settings[hidden]{display:none!important}
+.ece-consent{position:fixed;right:1rem;bottom:1rem;z-index:90;width:min(420px,calc(100% - 2rem));box-sizing:border-box;padding:1rem;background:#0d1d33;color:#fff;border:1px solid #c8a252;border-radius:14px;box-shadow:0 8px 32px #0004;max-height:65vh;overflow:auto}
+.ece-consent p{margin:.5rem 0 .8rem;font-size:.85rem;line-height:1.55}
+.ece-consent a{color:#f2d698;text-decoration:underline}
+.ece-consent-actions{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.ece-consent-actions button{background:transparent;color:#fff;border-color:#d4b77a}
+.ece-consent-settings{display:block;margin:.5rem auto 1rem;font-size:.8rem}
+.ece-share-btn:focus-visible,.ece-consent button:focus-visible,.ece-consent-settings:focus-visible{outline:3px solid #c8a252;outline-offset:3px}
+@media(max-width:700px){.ece-consent{bottom:calc(72px + env(safe-area-inset-bottom,0px));right:.75rem;width:calc(100% - 1.5rem)}.ece-library-actions{align-items:stretch;flex-direction:column}.ece-library-actions .btn,.ece-share-btn{text-align:center}.ece-consent-settings{margin-bottom:80px}}
