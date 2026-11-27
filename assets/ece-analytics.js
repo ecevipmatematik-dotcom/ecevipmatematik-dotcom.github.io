@@ -6,7 +6,7 @@
   const key="ece_analytics_consent_v1";
   let allowed=false,loaded=false,choice="";
   try{choice=localStorage.getItem(key)||"";}catch{}
-  const events=new Set(["whatsapp_click","phone_click","appointment_cta","contact_form_start","contact_form_whatsapp","pdf_preview","pdf_download","library_open","quiz_start","quiz_complete","program_match","program_details","math_lab_open","share_link","section_view"]);
+  const events=new Set(["whatsapp_click","phone_click","appointment_cta","contact_form_start","contact_form_whatsapp","pdf_preview","pdf_download","library_open","quiz_start","quiz_complete","program_match","program_details","math_lab_open","share_link","pdf_share_file","section_view"]);
   const places=new Set(["anasayfa","programlar","iletisim","pdf-kutuphanesi","kaynaklar","seviye-testi","matematik-lab","calisma-salonu","galeri","kamplar","sinav-takvimi","neden-ece","kayit-daveti","footer","mobile","other"]);
   const campaigns={utm_source:new Set(["instagram","whatsapp","google","ece_site"]),utm_medium:new Set(["social","referral","organic","qr"]),utm_campaign:new Set(["bio","kamp_pdf","deneme","paylasim","on_gorusme"]),utm_content:new Set(["bio","story","reels","post","qr","library"])};
   const page=new URL(location.origin+location.pathname);
@@ -83,15 +83,4 @@
     },{threshold:.15});
     for(const s of document.querySelectorAll("section[id]"))if(places.has(s.id))observer.observe(s);
   }
-  const share=document.getElementById("eceShareLibrary");
-  const status=document.getElementById("eceShareStatus");
-  share?.addEventListener("click",async()=>{
-    const url=location.origin+"/?utm_source=ece_site&utm_medium=referral&utm_campaign=paylasim&utm_content=library#pdf-kutuphanesi";
-    try{
-      if(navigator.share)await navigator.share({title:"ECE VIP Akademi – Ücretsiz PDF Kütüphanesi",url});
-      else if(navigator.clipboard){await navigator.clipboard.writeText(url);if(status)status.textContent="Bağlantı kopyalandı.";}
-      else{if(status)status.textContent="Paylaşım bağlantısı: "+url;return;}
-      send("share_link","pdf-kutuphanesi");
-    }catch(e){if(e.name!=="AbortError"&&status)status.textContent="Paylaşım bağlantısı: "+url;}
-  });
 })();

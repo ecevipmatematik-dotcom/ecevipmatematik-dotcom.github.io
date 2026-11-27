@@ -99,7 +99,7 @@
  </div>
 </section>
 <dialog class="lib-dialog" id="libDialog" aria-label="Kamp PDF önizlemesi">
- <div class="lib-dialog-head"><strong id="libDialogTitle">PDF Önizleme</strong><a id="libDialogLink" href="#" target="_blank" rel="noopener">Yeni sekmede aç ↗</a><button type="button" id="libDialogClose" aria-label="Önizlemeyi kapat">×</button></div>
+ <div class="lib-dialog-head"><strong id="libDialogTitle">PDF Önizleme</strong><a id="libDialogLink" href="#" target="_blank" rel="noopener">Yeni sekmede aç ↗</a><button id="libDialogShare" type="button" aria-label="Bu PDF dosyasını paylaş">Paylaş ↗</button><button type="button" id="libDialogClose" aria-label="Önizlemeyi kapat">×</button></div>
  <iframe id="libDialogFrame" title="Kamp PDF önizlemesi" loading="lazy"></iframe>
 </dialog>
 <section class="section programs premium-section" id="programlar"><div class="wrap"><div class="section-head"><div><div class="eyebrow">EĞİTİM PROGRAMLARI</div><h2>Eğitim programlarımız</h2></div><p>Ortaokul, lise ve sınav grupları için matematik ve Türkçe dersleri düzenlenmektedir.</p></div>
@@ -764,7 +764,9 @@ $$('img[data-photo-key]').forEach(img=>{
   preview.setAttribute('aria-label',preview.dataset.title+' önizle');
   const dl=make('a','lib-download','PDF İndir ↓');
   dl.href=href(f.path||f.name);dl.download=f.name;dl.setAttribute('aria-label',preview.dataset.title+' PDF indir');
-  acts.append(preview,dl);body.append(acts);card.append(cover,body);
+  const share=make('button','lib-preview ece-pdf-share','Paylaş ↗');
+  share.type='button';share.dataset.shareUrl=dl.href;share.dataset.shareTitle=preview.dataset.title;share.dataset.shareFile=f.name;share.setAttribute('aria-label',preview.dataset.title+' paylaş');
+  acts.append(preview,dl,share);body.append(acts);card.append(cover,body);
   return card;
  }
  const fragment=document.createDocumentFragment();files.forEach(f=>fragment.append(buildCard(f)));grid.append(fragment);
@@ -811,4 +813,18 @@ $$('img[data-photo-key]').forEach(img=>{
 <script defer src="./assets/ece-upgrade.js"></script>
 <script defer src="./assets/ece-welcome.js"></script>
 <script defer src="./assets/ece-analytics.js"></script>
+<dialog id="eceShareDialog" class="ece-share-dialog" aria-labelledby="eceShareTitle">
+  <div class="ece-share-head"><h2 id="eceShareTitle">PDF paylaş</h2><button id="eceShareClose" type="button" aria-label="Paylaşımı kapat">×</button></div>
+  <p id="eceShareName"></p>
+  <div class="ece-share-options">
+    <a id="eceShareWA" target="_blank" rel="noopener noreferrer" class="ece-share-option ece-share-wa">WhatsApp'ta bağlantıyı paylaş ↗</a>
+    <button id="eceShareNative" type="button" class="ece-share-option">Telefonun paylaşım menüsü ↗</button>
+    <button id="eceShareCopy" type="button" class="ece-share-option">Bağlantıyı kopyala</button>
+    <button id="eceShareFile" type="button" class="ece-share-option" hidden>PDF dosyası olarak paylaş</button>
+    <a id="eceShareDownload" class="ece-share-option" hidden>PDF indir ↓</a>
+  </div>
+  <label for="eceShareURL">Paylaşılacak bağlantı</label><input id="eceShareURL" type="url" readonly/>
+  <p id="eceShareFeedback" role="status" aria-live="polite"></p>
+</dialog>
+<script defer src="./assets/ece-pdf-share.js?v=1"></script>
 </body></html>
